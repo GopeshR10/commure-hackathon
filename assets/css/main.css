@@ -31,15 +31,15 @@ footer, header, hgroup, menu, nav, section {
 
 /* Update color theme */
 :root {
-    --dark-purple: #4B0082;
-    --light-purple: #9B4D96;
-    --black: #1a1a1a;
-    --dark-blue: #272833;
+    --black:#000000;
+    --light-blue: #A8F4FF; /* New light blue color */
+    --white: #FFFFFF; /* New white color */
 }
 
 body {
     color: #fff;
 	line-height: 1;
+    font-family: 'GT America Regular', sans-serif; /* Use Regular font for body */
 }
 
 ol, ul {
@@ -119,13 +119,12 @@ input, select, textarea {
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-bottom: dotted 1px;
-		color: #e44c65;
+		color: var(--light-blue);;
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #e44c65 !important;
+			color: var(--light-blue);
 			border-bottom-color: transparent;
 		}
 
@@ -147,6 +146,7 @@ input, select, textarea {
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 1em 0;
+		font-family: 'GT America Extended Bold', sans-serif; /* Use Extended Bold for headers */
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2195,12 +2195,12 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: var(--light-blue);;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
 			max-width: 20em;
-			width: 75%;
+			width: 67%;
 		}
 
 	footer.major {
@@ -2264,7 +2264,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #e44c65;
+			border-color: var(--light-blue);;
 		}
 
 	select {
@@ -2367,7 +2367,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #e44c65;
+			border-color: var(--light-blue);;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2864,8 +2864,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #e44c65;
-			color: #e44c65 !important;
+			box-shadow: inset 0 0 0 1px var(--light-blue);;
+			color: var(--light-blue); 
 		}
 
 		input[type="submit"]:active,
@@ -2907,16 +2907,16 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #e44c65;
+			background-color: var(--light-blue);
 			box-shadow: none;
-			color: #ffffff !important;
+			color: var(--black) !important;
 		}
 
 			input[type="submit"].primary:hover,
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
 			.button.primary:hover {
-				background-color: #e76278;
+				background-color: var(--black);
 			}
 
 			input[type="submit"].primary:active,
@@ -3125,11 +3125,11 @@ input, select, textarea {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #e44c65;
+			border-color: var(--light-blue);;
 		}
 
 		.spotlight.style2 .content {
-			border-color: #e44c65;
+			border-color: var(--light-blue);;
 		}
 
 		.spotlight.style3 .content {
@@ -3210,7 +3210,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
-				color: #e44c65;
+				color: var(--light-blue);;
 			}
 
 		.dropotron.level-0 {
@@ -3249,8 +3249,8 @@ input, select, textarea {
 		left: 0;
 		width: 100%;
 		z-index: 1000;
-		background-color: var(--dark-purple);
-		color: #fff;
+		background-color: var(--light-blue); /* Updated from var(--light-blue) */
+		color: var(--light-blue); /* Updated from #fff */
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -3280,6 +3280,7 @@ input, select, textarea {
 				#header nav ul li {
 					display: inline-block;
 					margin-left: 1em;
+					margin-top: 1em;
 				}
 
 					#header nav ul li a, #header nav ul li span {
@@ -3295,7 +3296,6 @@ input, select, textarea {
 							height: 2em;
 							line-height: 2em;
 							padding: 0 1.25em;
-							margin-top: 0.5em;
 						}
 
 						#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
@@ -3303,7 +3303,7 @@ input, select, textarea {
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
+						color: var(--light-blue);;
 					}
 
 					#header nav ul li > ul {
@@ -3361,7 +3361,7 @@ input, select, textarea {
 		#banner .content {
 			display: inline-block;
 			margin-right: 1%;
-			max-width: 95%;
+			max-width: 67%; /* Example adjustment */
 			padding: 6em;
 			position: relative;
 			text-align: right;
@@ -3438,7 +3438,7 @@ input, select, textarea {
 		}
 
 		#footer .icons .icon.alt:hover:before {
-			color: var(--light-purple);
+			color: var(--light-blue);
 		}
 
 		#footer .copyright {
@@ -3680,14 +3680,6 @@ input, select, textarea {
 				margin: 0 0 2em 0;
 			}
 
-		/* Goto Next */
-
-			.goto-next:before {
-				height: 0.8em;
-				margin: -0.4em 0 0 -0.6em;
-				width: 1.2em;
-			}
-
 		/* Spotlight */
 
 			.spotlight {
@@ -3813,7 +3805,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: var(--light-blue);;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;
@@ -4015,21 +4007,27 @@ input, select, textarea {
 #banner h2 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
-    color: var(--light-purple);
+    color: var(--light-blue);
 }
 
 #banner p {
-    font-size: 1.2em;
+    font-size: 0.9em;
     margin-bottom: 1em;
-    color: #fff;
+    color: var(--light-blue);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #globe-container {
     position: relative;
-	background-color: var(--black);
+    background-color: var(--black); /* Updated to use --light-blue */
     z-index: 2;
-	height: 100vh;
-	width: 75%;
+    height: 33vh; /* Set height to 33% of the viewport height */
+    width: 33%; /* Set width to 33% of the screen width */
+    margin-left: auto; /* Center align with the SVG */
+    margin-right: auto; /* Center align with the SVG */
 }
 
 .goto-next {
@@ -4038,13 +4036,13 @@ input, select, textarea {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    color: var(--light-purple);
+    color: var(--light-blue); /* Updated from var(--light-blue) */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .goto-next:hover {
-    color: #fff;
+    color: var(--white); /* Updated from #fff */
 }
 
 /* Responsive adjustments */
@@ -4060,6 +4058,22 @@ input, select, textarea {
         text-align: center;
     }
 
+    #globe-container {
+        width: 100%; /* Full width on smaller screens */
+        height: 20vh; /* Adjust height for smaller screens */
+    }
+
+    #banner h2 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    #banner p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+	#logo {
+		display: block;
+	}
 }
 
 @media screen and (max-width: 736px) {
@@ -4074,30 +4088,34 @@ input, select, textarea {
     #banner p {
         font-size: 1em;
     }
-
 }
 
 /* Header Styles */
 #header {
-    background-color: var(--dark-purple);
-    color: #fff;
+    background-color: var(--light-blue); /* Updated from var(--light-blue) */
+    color: var(--white); /* Updated from #fff */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 1.5rem 3rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+#logo-container {
+    display: flex;
+    flex-direction: column; /* Stack logo above countdown */
+    align-items: center; /* Center align both elements */
+}
+
 #logo {
-    font-size: 1.8rem;
+    font-size: 0.8em; /* Adjust logo size */
     font-weight: bold;
     margin: 0;
-    padding: 0.5rem 0;
+	display: none;
 }
 
 #logo a {
@@ -4106,10 +4124,9 @@ input, select, textarea {
 }
 
 #countdown {
-    font-size: 1.25em;
-	font-weight: bolder;
-    color: var(--light-purple);
-    margin: 0.5em;
+    font-size: 1.75em; /* Keep countdown size */
+    font-weight: bolder;
+    color: var(--light-blue);
 }
 
 #nav {
@@ -4128,24 +4145,22 @@ input, select, textarea {
 }
 
 #nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.75rem 1.25rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    color: var(--light-blue); /* Change font color to --light-blue */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 #nav ul li a:hover {
-    background-color:  var(--black);
+    color: var(--light-blue); /* Change color to light grey on hover */
 }
 
 #nav ul li a.button.primary {
-    background-color: var(--light-purple);
+    background-color: var(--light-blue);
     color: #fff;
 }
 
 #nav ul li a.button.primary:hover {
-    background-color: #7e2a6b;
+    background-color: #fff;
 }
 
 /* Responsive Header */
@@ -4198,11 +4213,11 @@ input, select, textarea {
 }
 
 #banner h2 {
-    color: var(--light-purple);
+    color: var(--light-blue);
 }
 
 .goto-next {
-    color: var(--light-purple);
+    color: var(--light-blue);
 }
 
 .goto-next:hover {
@@ -4243,14 +4258,14 @@ input, select, textarea {
 }
 
 #prizes .prize-card h3 {
-    color: var(--light-purple);
-    font-size: 1.5rem;
+    color: var(--light-blue);
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 #prizes .prize-card p {
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 0.0rem;
     line-height: 1.6;
 }
 
@@ -4328,6 +4343,7 @@ input, select, textarea {
     padding: 2rem;
     border-radius: 6px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+	height: 100%;
 }
 
 #prizes .prize-card:hover {
@@ -4336,7 +4352,7 @@ input, select, textarea {
 }
 
 #prizes .prize-card h3 {
-    color: var(--light-purple);
+    color: var(--light-blue);
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -4385,7 +4401,7 @@ input, select, textarea {
 }
 
 .activity-card h3 {
-    color: var(--light-purple);
+    color: var(--light-blue);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
@@ -4411,4 +4427,30 @@ input, select, textarea {
 		width: 100%;
 		height: 25vh;
 	}
+}
+
+/* Update font family */
+@font-face {
+    font-family: 'GT America Extended Bold';
+    src: url('../webfonts/GT-America-Extended-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GT America Regular';
+    src: url('../webfonts/GT-America-Extended-Regular.ttf') format('truetype');
+}
+
+/* Apply the font family */
+body {
+    font-family: 'GT America Regular', sans-serif; /* Use Regular font for body */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'GT America Extended Bold', sans-serif; /* Use Extended Bold for headers */
+}
+
+/* Update styles for the commure-codes logo */
+#commure-codes-logo {
+    width: 100%; /* Make the SVG occupy the entire width of the div */
+    height: auto; /* Maintain aspect ratio */
 }

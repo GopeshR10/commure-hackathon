@@ -13,26 +13,27 @@
     <div id="page-wrapper">
 
       <!-- Header Section (Fixed at the top) -->
-	  <header id="header">
-		<h1 id="logo"><a href="index.html">Commure CODES</a></h1>
-		<div id="countdown"></div> <!-- Move countdown here -->
-		<nav id="nav">
-		  <ul>
-			<li><a href="#banner">Home</a></li>
-			<li><a href="#event-details">Hackathon Details</a></li>
-			<li><a href="#hackathon-format">Hackathon Format</a></li>
-			<li><a href="#" class="button primary">Register</a></li>
-		  </ul>
-		</nav>
-	  </header>
+      <header id="header">
+        <div id="logo-container">
+            <div id="countdown"></div> <!-- countdown here -->
+            <div id="logo"><a href="index.html">Commure</a></div>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#event-details">Event Details</a></li>
+                <li><a href="#hackathon-format">Hackathon Format</a></li>
+                <li><a href="#banner">FAQs</a></li>
+                <li><a href="https://forms.gle/R2TMezsMnSofNDpU7" class="button primary register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
 
       <!-- Banner with Rotating Globe -->
       <section id="banner">
         <div class="content">
           <div>
-            <h2>Commure CODES Hackathon</h2>
+            <img src="assets/css/images/commure-codes.svg" alt="Commure CODES" id="commure-codes-logo" />
             <p>Collaborate • Organize • Develop • Empower • Streamline</p>
-            <p>Join us for an exciting 24-hour internal hackathon, designed to foster creativity, innovation, and cross-functional collaboration.</p>
           </div>
         </div>
         <!-- Globe Container -->
@@ -128,7 +129,7 @@
           <div class="container">
             <div class="row gtr-uniform">
               <div class="col-4 col-12-medium">
-                <section class="box">
+                <section class="box prize-card">
                   <header>
                     <h3>Custom Hackathon Swag</h3>
                   </header>
@@ -136,7 +137,7 @@
                 </section>
               </div>
               <div class="col-4 col-12-medium">
-                <section class="box">
+                <section class="box prize-card">
                   <header>
                     <h3>Project Development</h3>
                   </header>
@@ -144,7 +145,7 @@
                 </section>
               </div>
               <div class="col-4 col-12-medium">
-                <section class="box">
+                <section class="box prize-card">
                   <header>
                     <h3>Company Recognition</h3>
                   </header>
@@ -221,7 +222,7 @@
 	  
 			// Create a sphere geometry (globe)
 			const geometry = new THREE.SphereGeometry(5, 20, 20);
-			const material = new THREE.MeshBasicMaterial({ color: '#9B4D96', wireframe: true });
+			const material = new THREE.MeshBasicMaterial({ color: '#A8F4FF', wireframe: true });
 			const globe = new THREE.Mesh(geometry, material);
 			scene.add(globe);
 	  
