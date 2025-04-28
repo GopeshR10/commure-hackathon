@@ -4438,3 +4438,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; /* Make the SVG occupy the entire width of the div */
     height: auto; /* Maintain aspect ratio */
 }
+
+/* Underline style for categories */
+.underline {
+    text-decoration: underline; /* Underline the text */
+    font-weight: bold; /* Make the text bold */
+    margin: 1em 0; /* Add some margin for spacing */
+}
