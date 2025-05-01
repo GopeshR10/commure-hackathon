@@ -2871,10 +2871,6 @@ input, select, textarea {
 		input[type="submit"]:active,
 		input[type="reset"]:active,
 		input[type="button"]:active,
-		.button:active {
-			background-color: rgba(228, 76, 101, 0.15);
-		}
-
 		input[type="submit"].icon:before,
 		input[type="reset"].icon:before,
 		input[type="button"].icon:before,
@@ -2910,14 +2906,13 @@ input, select, textarea {
 			background-color: var(--light-blue);
 			box-shadow: none;
 			color: var(--black) !important;
+			font-family: 'GT America Regular', sans-serif;;
+			font-weight: 900;
 		}
 
 			input[type="submit"].primary:hover,
 			input[type="reset"].primary:hover,
 			input[type="button"].primary:hover,
-			.button.primary:hover {
-				background-color: var(--black);
-			}
 
 			input[type="submit"].primary:active,
 			input[type="reset"].primary:active,
@@ -3274,7 +3269,7 @@ input, select, textarea {
 		}
 
 			#header nav ul {
-				margin: 0;
+				margin-top: 0.4em;
 			}
 
 				#header nav ul li {
@@ -4121,6 +4116,8 @@ input, select, textarea {
     font-size: 1.75em; /* Keep countdown size */
     font-weight: bolder;
     color: var(--light-blue);
+	margin-top: 0.2em;
+	margin-left: 0.4em;
 }
 
 #nav {
@@ -4154,6 +4151,9 @@ input, select, textarea {
 }
 
 #nav ul li a.button.primary:hover {
+    background-color: #fff;
+}
+.button.primary:hover {
     background-color: #fff;
 }
 
@@ -4444,4 +4444,8 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: underline; /* Underline the text */
     font-weight: bold; /* Make the text bold */
     margin: 1em 0; /* Add some margin for spacing */
+}
+
+#countdown-container{
+	display: flex;
 }

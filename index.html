@@ -15,7 +15,10 @@
       <!-- Header Section (Fixed at the top) -->
       <header id="header">
         <div id="logo-container">
-            <div id="countdown"></div> <!-- countdown here -->
+            <div id="countdown-container">
+              <button id="toggle-countdown" class="button primary" onclick="toggleCountdown()">Countdown</button>
+              <div id="countdown" style="display: none;"></div> <!-- countdown here -->
+            </div>
             <div id="logo"><a href="index.html">Commure</a></div>
         </div>
         <nav id="nav">
@@ -23,7 +26,7 @@
                 <li><a href="#event-details">Event Details</a></li>
                 <li><a href="#hackathon-format">Hackathon Format</a></li>
                 <li><a href="assets/pdfs/Commure_Hackathon_FAQ.pdf" target="_blank">FAQs</a></li>
-                <li><a href="https://forms.gle/R2TMezsMnSofNDpU7" class="button primary register">Register</a></li>
+                <li><a href="https://forms.gle/R2TMezsMnSofNDpU7" class="button primary">Register</a></li>
             </ul>
         </nav>
     </header>
@@ -161,32 +164,41 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-	<script>
-		// Countdown Timer to Event Date
-		const eventDate = new Date("May 2, 2025 12:00:00").getTime();
-		
-		const countdown = document.getElementById('countdown');
-		
-		function updateCountdown() {
-		  const now = new Date().getTime();
-		  const timeLeft = eventDate - now;
-		  
-		  if (timeLeft <= 0) {
-			countdown.innerHTML = "Event has started!";
-			clearInterval(timerInterval);
-		  } else {
-			const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-			const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-			const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-			
-			countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-		  }
-		}
-		const timerInterval = setInterval(updateCountdown, 1000);
-	  </script>
+    <script>
+      // Countdown Timer to Event Date
+      const eventDate = new Date("May 3, 2025 15:00:00 PST").getTime();
+      
+      const countdown = document.getElementById('countdown');
+      
+      function updateCountdown() {
+          const now = new Date().getTime();
+          const timeLeft = eventDate - now;
+          
+          if (timeLeft <= 0) {
+              clearInterval(timerInterval);
+          } else {
+              const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+              
+              countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          }
+      }
+      
+      const timerInterval = setInterval(updateCountdown, 1000);
 
-	     <!-- THREE.js Script for Globe -->
+      function toggleCountdown() {
+          if (countdown.style.display === "none") {
+              countdown.style.display = "block";
+              updateCountdown(); // Update countdown when shown
+          } else {
+              countdown.style.display = "none";
+          }
+      }
+    </script>
+
+	    <!-- THREE.js Script for Globe -->
 		 <script>
 			// Initialize Three.js scene for rotating globe
 			const scene = new THREE.Scene();
