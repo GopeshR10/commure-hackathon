@@ -51,8 +51,7 @@
               <h2>Event Details</h2>
             </div>
             <p><strong>Date:</strong> May 2nd–3rd, 2025</p>
-            <p><strong>Duration:</strong> 24 Hours (3pm to 3pm, Fri–Sat)</p>
-            <p><strong>Last Day to Register:</strong> April 27th, 2025</p>
+            <p><strong>Duration:</strong> 24 Hours (4pm to 4pm, Fri–Sat)</p>
             <p><strong>Participation Requirements:</strong></p>
             <ul>
               <li>Open to Engineering, Product, and Design teams.</li>
@@ -165,35 +164,36 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      // Countdown Timer to Event Date
-      const eventDate = new Date("May 3, 2025 15:00:00 PST").getTime();
-      
+      const endTime = new Date("May 3, 2025 16:00:00 PST").getTime(); // Updated end time
       const countdown = document.getElementById('countdown');
       
       function updateCountdown() {
-          const now = new Date().getTime();
-          const timeLeft = eventDate - now;
-          
+          const timeLeft = endTime - Date.now(); // Calculate time left based on current time
           if (timeLeft <= 0) {
               clearInterval(timerInterval);
           } else {
-              const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-              const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-              const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-              
-              countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+              const totalSeconds = Math.floor(timeLeft / 1000);
+              const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0'); // Convert to 24-hour format
+              const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+              const seconds = String(totalSeconds % 60).padStart(2, '0');
+              countdown.innerHTML = `${hours}:${minutes}:${seconds}`; // Display in 24-hour format
           }
       }
       
       const timerInterval = setInterval(updateCountdown, 1000);
 
+      // Initialize countdown display based on localStorage
+      window.onload = function() {
+          const isVisible = localStorage.getItem('countdownVisible') === 'true';
+          countdown.style.display = isVisible ? 'block' : 'none';
+      };
+
       function toggleCountdown() {
-          if (countdown.style.display === "none") {
-              countdown.style.display = "block";
+          const isCurrentlyVisible = countdown.style.display === "block";
+          countdown.style.display = isCurrentlyVisible ? "none" : "block";
+          localStorage.setItem('countdownVisible', !isCurrentlyVisible); // Save the new state
+          if (!isCurrentlyVisible) {
               updateCountdown(); // Update countdown when shown
-          } else {
-              countdown.style.display = "none";
           }
       }
     </script>
